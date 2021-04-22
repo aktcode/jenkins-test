@@ -6,9 +6,9 @@ node {
         git url: 'https://github.com/wardviaene/gs-gradle.git'
 
     stage 'Artifactory configuration'
-        rtGradle.tool = 'gradle' // Tool name from Jenkins configuration
-        rtGradle.deployer repo:'gradle-dev-local',  server: server
-        rtGradle.resolver repo:'gradle-dev', server: server
+        rtGradle.tool = 'gradle'
+        rtGradle.deployer repo:'default-generic-local',  server: server
+        rtGradle.resolver repo:'default-generic-local', server: server
 
         stage('Config Build Info') {
             buildInfo.env.capture = true
